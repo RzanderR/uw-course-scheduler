@@ -1,0 +1,827 @@
+[
+  {
+    "code": "CSE 123",
+    "term": "WINTER 2027",
+    "sections": [
+      {
+        "id": "A",
+        "type": "Lecture",
+        "parent": null,
+        "sln": "12798",
+        "building": "ARC",
+        "room": "147",
+        "async": false,
+        "days": [
+          2,
+          4
+        ],
+        "start": 750,
+        "end": 800
+      },
+      {
+        "id": "AA",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "12799",
+        "building": "MGH",
+        "room": "254",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 510,
+        "end": 560
+      },
+      {
+        "id": "AB",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "12800",
+        "building": "ART",
+        "room": "006",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 570,
+        "end": 620
+      },
+      {
+        "id": "AC",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "12801",
+        "building": "LOW",
+        "room": "111",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 630,
+        "end": 680
+      },
+      {
+        "id": "AD",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "12802",
+        "building": "LOW",
+        "room": "112",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 690,
+        "end": 740
+      },
+      {
+        "id": "AE",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "12803",
+        "building": "MGH",
+        "room": "284",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 750,
+        "end": 800
+      },
+      {
+        "id": "AF",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "12804",
+        "building": "ECE",
+        "room": "031",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 810,
+        "end": 860
+      },
+      {
+        "id": "AG",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "12805",
+        "building": "MGH",
+        "room": "082A",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 870,
+        "end": 920
+      },
+      {
+        "id": "AH",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "12806",
+        "building": "LOW",
+        "room": "115",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 930,
+        "end": 980
+      },
+      {
+        "id": "AI",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "12807",
+        "building": "",
+        "room": "",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 510,
+        "end": 560
+      },
+      {
+        "id": "AJ",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "12808",
+        "building": "LOW",
+        "room": "114",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 570,
+        "end": 620
+      },
+      {
+        "id": "AK",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "12809",
+        "building": "LOW",
+        "room": "112",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 630,
+        "end": 680
+      },
+      {
+        "id": "AL",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "12810",
+        "building": "MGH",
+        "room": "248",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 690,
+        "end": 740
+      },
+      {
+        "id": "AM",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "12811",
+        "building": "LOW",
+        "room": "117",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 750,
+        "end": 800
+      },
+      {
+        "id": "AN",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "12812",
+        "building": "LOW",
+        "room": "116",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 810,
+        "end": 860
+      },
+      {
+        "id": "AO",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "12813",
+        "building": "LOW",
+        "room": "117",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 870,
+        "end": 920
+      },
+      {
+        "id": "AP",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "12814",
+        "building": "MGH",
+        "room": "228",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 930,
+        "end": 980
+      },
+      {
+        "id": "B",
+        "type": "Lecture",
+        "parent": null,
+        "sln": "12815",
+        "building": "ARC",
+        "room": "147",
+        "async": false,
+        "days": [
+          2,
+          4
+        ],
+        "start": 810,
+        "end": 860
+      },
+      {
+        "id": "BA",
+        "type": "Quiz",
+        "parent": "B",
+        "sln": "12816",
+        "building": "ECE",
+        "room": "031",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 510,
+        "end": 560
+      },
+      {
+        "id": "BB",
+        "type": "Quiz",
+        "parent": "B",
+        "sln": "12817",
+        "building": "LOW",
+        "room": "113",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 570,
+        "end": 620
+      },
+      {
+        "id": "BC",
+        "type": "Quiz",
+        "parent": "B",
+        "sln": "12818",
+        "building": "LOW",
+        "room": "113",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 630,
+        "end": 680
+      },
+      {
+        "id": "BD",
+        "type": "Quiz",
+        "parent": "B",
+        "sln": "12819",
+        "building": "ART",
+        "room": "004",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 690,
+        "end": 740
+      },
+      {
+        "id": "BE",
+        "type": "Quiz",
+        "parent": "B",
+        "sln": "12820",
+        "building": "AND",
+        "room": "301",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 750,
+        "end": 800
+      },
+      {
+        "id": "BF",
+        "type": "Quiz",
+        "parent": "B",
+        "sln": "12821",
+        "building": "CMU",
+        "room": "228",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 810,
+        "end": 860
+      },
+      {
+        "id": "BG",
+        "type": "Quiz",
+        "parent": "B",
+        "sln": "12822",
+        "building": "THO",
+        "room": "211",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 870,
+        "end": 920
+      },
+      {
+        "id": "BH",
+        "type": "Quiz",
+        "parent": "B",
+        "sln": "12823",
+        "building": "LOW",
+        "room": "112",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 930,
+        "end": 980
+      },
+      {
+        "id": "BK",
+        "type": "Quiz",
+        "parent": "B",
+        "sln": "12824",
+        "building": "ART",
+        "room": "004",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 630,
+        "end": 680
+      },
+      {
+        "id": "BL",
+        "type": "Quiz",
+        "parent": "B",
+        "sln": "12825",
+        "building": "LOW",
+        "room": "116",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 690,
+        "end": 740
+      },
+      {
+        "id": "BM",
+        "type": "Quiz",
+        "parent": "B",
+        "sln": "12826",
+        "building": "DEN",
+        "room": "210",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 750,
+        "end": 800
+      },
+      {
+        "id": "BO",
+        "type": "Quiz",
+        "parent": "B",
+        "sln": "12827",
+        "building": "MGH",
+        "room": "248",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 870,
+        "end": 920
+      }
+    ]
+  },
+  {
+    "code": "MATH 126",
+    "term": "WINTER 2027",
+    "sections": [
+      {
+        "id": "A",
+        "type": "Lecture",
+        "parent": null,
+        "sln": "17070",
+        "building": "KNE",
+        "room": "210",
+        "async": false,
+        "days": [
+          0,
+          2,
+          4
+        ],
+        "start": 870,
+        "end": 920
+      },
+      {
+        "id": "AA",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "17071",
+        "building": "OUG",
+        "room": "136",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 510,
+        "end": 560
+      },
+      {
+        "id": "AB",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "17072",
+        "building": "OUG",
+        "room": "136",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 570,
+        "end": 620
+      },
+      {
+        "id": "AC",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "17073",
+        "building": "THO",
+        "room": "125",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 510,
+        "end": 560
+      },
+      {
+        "id": "B",
+        "type": "Lecture",
+        "parent": null,
+        "sln": "17074",
+        "building": "KNE",
+        "room": "210",
+        "async": false,
+        "days": [
+          0,
+          2,
+          4
+        ],
+        "start": 570,
+        "end": 620
+      },
+      {
+        "id": "BA",
+        "type": "Quiz",
+        "parent": "B",
+        "sln": "17075",
+        "building": "OUG",
+        "room": "136",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 750,
+        "end": 800
+      },
+      {
+        "id": "BB",
+        "type": "Quiz",
+        "parent": "B",
+        "sln": "17076",
+        "building": "OUG",
+        "room": "136",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 810,
+        "end": 860
+      },
+      {
+        "id": "BC",
+        "type": "Quiz",
+        "parent": "B",
+        "sln": "17077",
+        "building": "SMI",
+        "room": "102",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 810,
+        "end": 860
+      },
+      {
+        "id": "C",
+        "type": "Lecture",
+        "parent": null,
+        "sln": "17078",
+        "building": "KNE",
+        "room": "210",
+        "async": false,
+        "days": [
+          0,
+          2,
+          4
+        ],
+        "start": 630,
+        "end": 680
+      },
+      {
+        "id": "CA",
+        "type": "Quiz",
+        "parent": "C",
+        "sln": "17079",
+        "building": "OUG",
+        "room": "136",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 870,
+        "end": 920
+      },
+      {
+        "id": "CB",
+        "type": "Quiz",
+        "parent": "C",
+        "sln": "17080",
+        "building": "OUG",
+        "room": "136",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 930,
+        "end": 980
+      },
+      {
+        "id": "CC",
+        "type": "Quiz",
+        "parent": "C",
+        "sln": "17081",
+        "building": "SMI",
+        "room": "102",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 870,
+        "end": 920
+      },
+      {
+        "id": "D",
+        "type": "Lecture",
+        "parent": null,
+        "sln": "17082",
+        "building": "",
+        "room": "",
+        "async": true,
+        "days": [],
+        "start": null,
+        "end": null
+      },
+      {
+        "id": "DA",
+        "type": "Quiz",
+        "parent": "D",
+        "sln": "17083",
+        "building": "OUG",
+        "room": "136",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 630,
+        "end": 680
+      },
+      {
+        "id": "DB",
+        "type": "Quiz",
+        "parent": "D",
+        "sln": "17084",
+        "building": "OUG",
+        "room": "136",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 690,
+        "end": 740
+      },
+      {
+        "id": "DC",
+        "type": "Quiz",
+        "parent": "D",
+        "sln": "17085",
+        "building": "THO",
+        "room": "125",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 570,
+        "end": 620
+      }
+    ]
+  },
+  {
+    "code": "STAT 311",
+    "term": "WINTER 2027",
+    "sections": [
+      {
+        "id": "A",
+        "type": "Lecture",
+        "parent": null,
+        "sln": "20517",
+        "building": "JHN",
+        "room": "102",
+        "async": false,
+        "days": [
+          0,
+          2
+        ],
+        "start": 870,
+        "end": 950
+      },
+      {
+        "id": "AA",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "20518",
+        "building": "THO",
+        "room": "211",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 930,
+        "end": 980
+      },
+      {
+        "id": "AB",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "20519",
+        "building": "THO",
+        "room": "234",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 990,
+        "end": 1040
+      },
+      {
+        "id": "AC",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "20520",
+        "building": "THO",
+        "room": "234",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 930,
+        "end": 980
+      },
+      {
+        "id": "AD",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "20521",
+        "building": "THO",
+        "room": "211",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 990,
+        "end": 1040
+      },
+      {
+        "id": "AE",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "20522",
+        "building": "THO",
+        "room": "202",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 930,
+        "end": 980
+      },
+      {
+        "id": "AF",
+        "type": "Quiz",
+        "parent": "A",
+        "sln": "20523",
+        "building": "THO",
+        "room": "202",
+        "async": false,
+        "days": [
+          1,
+          3
+        ],
+        "start": 990,
+        "end": 1040
+      },
+      {
+        "id": "B",
+        "type": "Lecture",
+        "parent": null,
+        "sln": "20524",
+        "building": "",
+        "room": "",
+        "async": true,
+        "days": [],
+        "start": null,
+        "end": null
+      }
+    ]
+  }
+]

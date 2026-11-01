@@ -1,0 +1,10 @@
+﻿import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {generate,defaults} from './src/engine.js';
+import {discover,bounds,patternKey} from './src/discovery.js';
+const courses=JSON.parse(readFileSync(new URL('./src/courses.json',import.meta.url)));
+const {results}=generate(courses,defaults);
+test('patterns preserve all combinations and merge only identical course meeting times',()=>{const groups=discover(results);assert.ok(groups.length<results.length);assert.equal(groups.reduce((n,g)=>n+g.variants.length,0),results.length);for(const g of groups)assert.ok(g.variants.every(r=>patternKey(r)===g.key));const r=structuredClone(results[0]);r.sections[0].course='OTHER 101';assert.notEqual(patternKey(r),patternKey(results[0]));});
+test('browse filters intersect and every variant satisfies them',()=>{const groups=discover(results,{days:4,async:'some',start:600,end:1020,gap:120});assert.ok(groups.length);for(const g of groups)for(const r of g.variants){assert.ok(r.metrics.days<=4);assert.ok(r.metrics.async>0);assert.ok(bounds(r).start>=600);assert.ok(bounds(r).end<=1020);assert.ok(r.metrics.gap<=120);}assert.equal(discover(results,{days:1}).length,0);});
+test('sorting orders patterns and picks the strongest variant by the selected measure',()=>{for(const sort of ['gaps','days','walk','later','finish']){const groups=discover(results,{sort});const value=r=>({gaps:r.metrics.gap,days:r.metrics.days,walk:r.metrics.walk,later:-(bounds(r).start??1440),finish:bounds(r).end??0}[sort]);assert.ok(groups.every((g,i)=>!i||value(g.best)>=value(groups[i-1].best)));for(const g of groups)assert.ok(g.variants.every(r=>value(r)>=value(g.best)));}});
