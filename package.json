@@ -1,1 +1,17 @@
-{"name":"uw-course-scheduler","version":"0.1.0","private":true,"type":"module","scripts":{"dev":"vite --host 127.0.0.1","build":"vite build","test":"node --test"},"dependencies":{"pdfjs-dist":"^5.4.0"},"devDependencies":{"vite":"^7.2.0"}}
+{
+  "name": "uw-course-scheduler",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "pdfjs-dist": "^5.4.0"
+  },
+  "devDependencies": {
+    "vite": "^7.2.0"
+  }
+}

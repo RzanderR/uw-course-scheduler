@@ -1,38 +1,10 @@
-# Husky Hours
+﻿# Husky Hours
 
-A local UW course schedule explorer built with Vite and vanilla JavaScript.
+A browser-local course schedule planner. Start with an empty plan and add courses from any institution for any term or session. No course catalog is hardcoded into the app.
 
-## Run
+## Run on any device
 
-npm install
-npm run dev
-
-Open the local URL printed by Vite. Run `npm test` for the scheduling engine tests and `npm run build` for a deployable static `dist` folder.
-
-## Features
-
-- 54 source sections from the supplied Winter 2027 CSE 123, MATH 126, and STAT 311 MyPlan PDFs.
-- Compatible lecture/quiz combinations, overlap rejection, pinned sections, strict hours, blocked times, and minimum transition buffers.
-- Adjustable ranking for ideal hours, gaps, campus days, and estimated travel.
-- Weekly calendar, saved local comparisons, and JSON schedule export.
-- Browser-local MyPlan PDF import with a review step; files are not sent to a server.
-
-## Data and limits
-
-Starter data is a November 1, 2026 snapshot, not live registration availability. Letter prefixes infer lecture/quiz pairings. MATH 126 D retains its required quiz; STAT 311 B has no quiz. Exams and prerequisites are not automatically validated. Unknown meeting times are rejected. Unknown locations remain visible. Only standard MyPlan lecture/quiz/lab section tables are supported; review imported data carefully.
-
-Walking values are user-configurable estimates, not mapped routes: different buildings default to 10 minutes and same-building transitions to 2 minutes. Unknown transitions are flagged. Ranking is a weighted penalty, not a guarantee of the best real-world schedule. Generation is capped at 200,000 search nodes and indicates truncation. Preferences and saved schedules persist in this browser's local storage.
-
-`src/engine.js` contains the pure scheduling logic. `src/parser.js` parses extracted MyPlan text. `src/courses.json` contains starter data. `scripts/*.txt` preserve extracted source text for reproducibility. `scripts/seed.mjs` rebuilds starter JSON. `scripts/check-pdfjs.mjs` checks the supplied local PDFs with the same extraction library used by the browser.
-
-
-## Visual schedule discovery
-
-The studio opens with a gallery of distinct weekly patterns. Schedules with identical course meeting times are grouped, preserving every section combination in the detail view. Browse 12 miniature calendars per page, filter by campus days, lecture format, start/finish times, and total gaps, or sort by preference match, later starts, earlier finishes, gaps, days, or estimated travel. Save directly from the gallery and compare calendar previews in Saved.
-
-## Continue on another device
-
-Requires Node.js 22.12+ (or Node.js 24 LTS) and npm.
+Requires Node.js 22.12+ or Node.js 24 and npm.
 
 ```sh
 git clone https://github.com/RzanderR/uw-course-scheduler.git
@@ -41,4 +13,44 @@ npm ci
 npm run dev
 ```
 
-Preferences and saved schedules are browser-local and do not sync through GitHub. Course data and source code are in the repository. To verify additional local source PDFs, run `node scripts/check-pdfjs.mjs <PDF-directory>`.
+Open the URL printed by Vite. `npm test` runs the scheduling, import, validation, and discovery tests. `npm run build` produces a static `dist` folder.
+
+## Add your courses
+
+Use **Add course** to enter a course code/name, a term label including its year, and the available sections. Course codes, section names, and meeting types are free text: a main section can be a lecture, seminar, studio, lab, or another type.
+
+- The planner chooses one **main section** per course.
+- **Required components** are linked to a particular main section or to any main section. Give alternatives the same component name (for example, Lab). Components with different names (Lab and Discussion) are both required.
+- Each section can have several meeting rows, with different days, times, buildings, and rooms. Monday through Sunday are supported.
+- Explicitly asynchronous sections have no scheduled meetings. Their required in-person components remain scheduled.
+- Edit any course later. Invalid times, overlapping meetings, duplicate section names, missing main sections, and mixed-term course lists are rejected.
+
+Plan one term/session at a time. Use **Start a new term** to clear the active courses after exporting them. Existing local courses from earlier app versions are preserved; they are not defaults for new users.
+
+## Import and portability
+
+**Import MyPlan PDF** is a convenience parser for text-based UW MyPlan section tables. It recognizes other departments and years and extracts multiple meeting rows. Every imported course opens in the editor so users can correct times, term labels, and inferred pairings before saving. Arbitrary institutional PDF layouts, scanned files, and live registration systems are not automatically supported: use the manual editor for those sources.
+
+**Export courses / Import courses** transfer the complete editable course dataset as a JSON file between browsers/devices. An import replaces the active course list after a review step. Preferences and saved schedules remain local to each browser; they are not synced by GitHub or included in the course export. Individual schedules can also be exported from the detail view.
+
+## Explore schedules
+
+The gallery groups identical course meeting patterns while retaining every valid section combination. Miniature calendars, filtering, sorting, direct selection, and saved comparisons make alternatives visible. Ranking considers ideal hours, weekly gaps, days with meetings, and estimated travel. Hard constraints include unavailable times, earliest/latest allowed hours, and minimum transition buffers.
+
+## Limits
+
+Schedules represent a recurring weekly timetable in the courses' local time. Alternating weeks, date-specific exceptions, final exams, prerequisites, seat availability, and registration restrictions must be verified separately. Split overnight meetings into separate days. Courses using different campuses/time zones need times converted to one local timetable before entry.
+
+Travel values are user estimates, not mapped walking routes. Different buildings default to 10 minutes; same-building transitions use 2 minutes; unknown locations/transitions are flagged. The campus-days metric counts days with scheduled meetings, including synchronous online meetings if entered. Search is capped at 200,000 nodes and reports truncation. Very large catalogs should be narrowed with pins and availability constraints.
+
+## Project structure
+
+- `src/model.js`: generic course schema, validation, and meeting helpers.
+- `src/editor.js`: manual course entry and editable PDF review.
+- `src/engine.js`: section combinations, conflict checks, and scoring.
+- `src/discovery.js`: pattern grouping, filtering, and sorting.
+- `src/parser.js`: optional MyPlan text adapter.
+- `src/main.js`, `src/style.css`: UI and browser-local persistence.
+- `tests/fixtures/`: sample UW PDFs' extracted text and parsed data used **only by tests**, never imported by the app.
+
+`node scripts/seed.mjs` regenerates the test fixture from extracted text. `node scripts/check-pdfjs.mjs <PDF-directory>` verifies the original example PDFs when locally available. GitHub Actions runs tests and production builds on pushes and pull requests.
