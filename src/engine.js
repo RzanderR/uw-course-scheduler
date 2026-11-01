@@ -8,4 +8,4 @@ export function generate(courses,p,pins={}){
  let results=[],visited=0,truncated=false;
  function visit(i,ss){if(++visited>200000){truncated=true;return;}if(i===groups.length){let m=metrics(ss,p),score=p.early*(m.early+m.late)/60+p.gaps*m.gap/60+p.days*m.days*2+p.walk*m.walk/30;results.push({id:ss.map(s=>s.course+':'+s.id).join('|'),sections:ss,metrics:m,score});return;}for(let option of groups[i]){if(option.some(s=>s.days.length&&(s.start<p.hardStart||s.end>p.hardEnd||p.blocks.some(b=>s.days.includes(b.day)&&s.start<b.end&&b.start<s.end))))continue;if(option.some(s=>ss.some(t=>!compatible(s,t))))continue;let combined=[...ss,...option];if(p.buffer&&combined.some(s=>combined.some(t=>s!==t&&s.days.some(d=>t.days.includes(d))&&s.end<=t.start&&t.start-s.end<p.buffer)))continue;visit(i+1,combined);if(truncated)break;}}
  if(courses.length)visit(0,[]);results.sort((a,b)=>a.score-b.score||a.id.localeCompare(b.id));return {results,truncated};
-}
+}

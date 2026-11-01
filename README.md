@@ -1,4 +1,4 @@
-﻿# Husky Hours
+# Husky Hours
 
 A local UW course schedule explorer built with Vite and vanilla JavaScript.
 

@@ -20,8 +20,8 @@ function review(imported){let dialog=$('#review');dialog.innerHTML=`<h2>Review i
 recalc();
 
 function miniCalendar(r){
- const timed=r.sections.filter(s=>s.days.length),from=Math.min(480,...timed.map(s=>s.start)),to=Math.max(1080,...timed.map(s=>s.end));
- return `<div class="mini" aria-label="Weekly schedule preview, ${fmt(from)} to ${fmt(to)}"><div class="mini-head"><span>${fmt(from).replace(':00','')}</span>${['M','T','W','Th','F'].map(d=>`<b>${d}</b>`).join('')}</div><div class="mini-body"><div class="mini-axis"><span>NOON</span><small>${fmt(to).replace(':00','')}</small></div>${[0,1,2,3,4].map(d=>`<div class="mini-day">${timed.filter(s=>s.days.includes(d)).map(s=>`<i title="${esc(s.course+' '+s.id)} ${fmt(s.start)}–${fmt(s.end)}" class="mini-event color${Math.max(0,courses.findIndex(c=>c.code===s.course))%5}" style="top:${(s.start-from)/(to-from)*100}%;height:${(s.end-s.start)/(to-from)*100}%"></i>`).join('')}</div>`).join('')}</div></div>`;
+ const timed=r.sections.filter(s=>s.days.length),all=courses.flatMap(c=>c.sections).filter(s=>s.days.length),from=Math.min(480,...all.map(s=>s.start)),to=Math.max(1080,...all.map(s=>s.end));
+ return `<div class="mini" aria-label="Weekly schedule preview, ${fmt(from)} to ${fmt(to)}"><div class="mini-head"><span>${fmt(from).replace(':00','')}</span>${['M','T','W','Th','F'].map(d=>`<b>${d}</b>`).join('')}</div><div class="mini-body"><div class="mini-axis"><span style="top:${(720-from)/(to-from)*100}%">NOON</span><small>${fmt(to).replace(':00','')}</small></div>${[0,1,2,3,4].map(d=>`<div class="mini-day">${timed.filter(s=>s.days.includes(d)).map(s=>`<i title="${esc(s.course+' '+s.id)} ${fmt(s.start)}–${fmt(s.end)}" class="mini-event color${Math.max(0,courses.findIndex(c=>c.code===s.course))%5}" style="top:${(s.start-from)/(to-from)*100}%;height:${(s.end-s.start)/(to-from)*100}%"></i>`).join('')}</div>`).join('')}</div></div>`;
 }
 function filterSelect(key,label,options){return `<label>${label}<select data-discover="${key}">${options.map(([v,t])=>`<option value="${v}" ${String(filters[key]||'')===String(v)?'selected':''}>${t}</option>`).join('')}</select></label>`;}
 function gallery(){

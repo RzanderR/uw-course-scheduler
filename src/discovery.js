@@ -1,4 +1,4 @@
-﻿// A pattern keeps course identity and meeting times, but groups interchangeable rooms/sections.
+// A pattern keeps course identity and meeting times, but groups interchangeable rooms/sections.
 export function patternKey(schedule) {
   return schedule.sections.map(s => [s.course, s.type, s.async ? 'async' : `${s.days.join(',')}:${s.start}:${s.end}`].join('/')).sort().join('|');
 }

@@ -15,4 +15,4 @@ export function parseCourse(text, filename='') {
  if(!course.sections.length) throw Error('No sections recognized. Use a UW MyPlan course PDF with a section table.');
  if(course.sections.some(s=>s.parent&&!course.sections.some(l=>l.id===s.parent&&l.type==='Lecture')))throw Error('A linked lecture is missing from this file.');
  return course;
-}
+}

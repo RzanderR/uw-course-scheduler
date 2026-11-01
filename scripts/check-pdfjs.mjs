@@ -1,4 +1,4 @@
-﻿import {getDocument} from 'pdfjs-dist/legacy/build/pdf.mjs';
+import {getDocument} from 'pdfjs-dist/legacy/build/pdf.mjs';
 import {readFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 const directory=process.argv[2];
